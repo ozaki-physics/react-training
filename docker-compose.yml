@@ -1,0 +1,20 @@
+version: '3'
+services:
+  react_training:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: react1701:training_vscode_in_container
+    container_name: react_training
+    tty: true
+    volumes:
+      # コンテナ側は相対パス書けない
+      - ./react-training:/react-training
+      # コンテナ側の node_modules を ホストと同期しない
+      - /react-training/node_modules
+    ports:
+      - "127.0.0.1:3000:3000"
+    # docker-compose でマウントしたり, go run で動かしたり, build し直したり と開発用の操作が多いから
+    # 自動でサーバ等動いてポートが埋まらないようにするため
+    # コメントアウトしても image 作成時点のバイナリファイルが実行されることに注意
+    command: bash
