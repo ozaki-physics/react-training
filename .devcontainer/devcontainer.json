@@ -9,7 +9,7 @@
   // オプションの 'workspaceFolder' プロパティは、VS Code が接続時にデフォルトで開くべきパス
   // パスを"/" にしても VS Code は 同じ場所を開く Dockerfile で WORKDIR を指定してるから?
   // 指定しなくても変わらなかった 分からないから一旦放置する
-  "workspaceFolder": "/react-training",
+  "workspaceFolder": "/share_dir",
   // コンテナ内の VS Code で使いたい拡張機能
   "extensions": [
     // git の履歴が確認できる拡張機能(ホスト側だけの拡張が推奨) 視覚的に見やすくしたいから
