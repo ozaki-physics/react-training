@@ -10,11 +10,6 @@ export const App = () => {
 
   };
 
-  const contentPinkStyle = {
-    color: "pink",
-    fontSize: "20px"
-  }
-
   return (
     <>
       <h1 style={{ color: "red" }}>こんにちは</h1>
