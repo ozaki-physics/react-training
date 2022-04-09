@@ -3,6 +3,8 @@ VScode から container に入って開発できるように .devcontainer\devco
 しかし docker image を slim にしたから image に git が含まれておらず 差分管理がしにくかったので  
 ローカルの VScode を使って ターミナルで container の中に入って サーバを立てる方法にする  
 
+サーバ立てるとき `npm start` を実行する  
+
 JSX のルールとして return 移行は1つのタグで囲われている必要がある  
 余計なタグを出力したくないなら React に用意されている `<Fragment></Fragment>` を使う  
 
@@ -48,3 +50,17 @@ React ファイルの中の プレーン JS の中の CSS オブジェクト だ
 
 JS では オブジェクトのプロパティ名に ハイフンが使えない  
 だから CSS オブジェクトの中では `font-size` も `fontSize` となる  
+
+props とは: コンポーネントに渡す引数のようなもの  
+`<ColoredMessage color="bule" message="お元気ですか?"/>`  
+属性で書くと props で props オブジェクトのプロパティとして渡される  
+
+props には children というプロパティが存在する  
+属性のように書くのではなく タグの間に書く  
+`<ColoredMessage color="bule"/>お元気ですか?<ColoredMessage>`  
+children には html 構造も渡すことができ コンポーネントの入れ子もできそう  
+
+props から値を取り出すときに `props.なんとか` って書かなくて済むように
+分割代入 `const {color, children} = props` を使うときもある  
+また `ColoredMessage = ({color, children}) => {}` と最初から展開しちゃうときもある  
+分割代入のことを destructure という  
