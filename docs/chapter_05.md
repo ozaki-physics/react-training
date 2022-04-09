@@ -50,6 +50,36 @@ SCSS が使える
 最近人気  
 React だけでなく 通常の html や css にも適用できる  
 
+`npm install -D tailwindcss@npm:@tailwindcss/postcss7-compatpostcss@^7 autoprefixer@^9`  
+Create React App のとき Tailwind の動作に必要な PostCSS を上書きすることができないから CRACO(Create React App Configuration Override) を使う  
+`npm install @craco/craco`  
+package.json を編集し CRACO で起動するようにする  
+色々設定を変更する必要があるため git の差分で確認して...  
+```json
+"script":{
+  "start": "react-scripts start" じゃなくて
+  "start": "craco start" にする
+}
+```
+
+[Tailwind 公式 React でのインストール方法](https://tailwindcss.com/docs/guides/create-react-app)  
+書籍のインストールコマンドではエラーになったから 公式を読んでインストール方法を変えた  
+`npm install -D tailwindcss postcss autoprefixer`  
+`npx tailwindcss init -p`  
+postcss.config.js, tailwind.config.js が作成され tailwind.config.js を編集  
+```javascript
+module.exports = {
+  purge: [
+    './src/**/*.{js,jsx,ts,tsx}',
+    './public/index.html',
+  ],
+  content: [],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
 
 
 ## その他
