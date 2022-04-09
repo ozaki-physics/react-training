@@ -5,6 +5,7 @@ import { App } from "./App";
 // import { StyledComponents } from "./components/StyledComponents";
 // import { Emotion } from "./components/Emotion";
 // import { TailwindCss } from "./components/TailwindCss";
+import { ChildRoot } from "./components/ChildRoot";
 
 
 ReactDOM.render(<App />, document.getElementById("root"))
@@ -13,3 +14,4 @@ ReactDOM.render(<App />, document.getElementById("root"))
 // ReactDOM.render(<StyledComponents />, document.getElementById("root"))
 // ReactDOM.render(<Emotion />, document.getElementById("root"))
 // ReactDOM.render(<TailwindCss />, document.getElementById("root"))
+ReactDOM.render(<ChildRoot />, document.getElementById("root"))
