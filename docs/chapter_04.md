@@ -36,3 +36,15 @@ const App = () => {
 };
 ReactDOM.render(<App />, document.getElementById("root"))
 ```
+
+コンポーネントに分けたら `export` を忘れずに付ける  
+また 利用する側では `import { App } from "./App";` のように import する  
+
+JS では `onclick` と各が React は `onClick` とキャメルケースにしなければならない  
+また return の中で `{console.log("hello")}` と `{}` を使うと中に プレーンな JS を書くことができる  
+
+CSS を記述するときは JS の CSS オブジェクトを作って それを React の プレーン JS に展開するから `style={{color="red"}}` と書く  
+React ファイルの中の プレーン JS の中の CSS オブジェクト だから  
+
+JS では オブジェクトのプロパティ名に ハイフンが使えない  
+だから CSS オブジェクトの中では `font-size` も `fontSize` となる  
