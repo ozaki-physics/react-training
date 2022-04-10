@@ -1,31 +1,27 @@
 import { ChangeEvent, useState, useCallback, FC } from "react";
 import styled from "styled-components";
 import { MemoList } from "./MemoList";
+import { useMemoList } from "../hooks/useMemoList";
 
 export const App: FC = () => {
+  const { memos, addTodo, deleteToDo } = useMemoList();
   // テキストボックス
   const [text, setText] = useState<string>("");
-  // メモ一覧
-  const [memos, setMemos] = useState<string[]>([]);
   // テキスト入力時に State に渡す
   const onChangeText = (e: ChangeEvent<HTMLInputElement>) => {
     setText(() => e.target.value);
   };
   // 追加ボタン
   const onClickAdd = () => {
-    // State 検知のために新たに配列作成
-    const newMemos = [...memos];
-    newMemos.push(text);
-    setMemos(() => newMemos);
     // 追加した後処理
+    addTodo(text);
     setText(() => "");
   };
   // 削除ボタン
   const onClickDelete = useCallback((index: number) => {
-    const newMemos = [...memos];
-    newMemos.splice(index, 1);
-    setMemos(() => newMemos);
-  }, [memos]);
+    deleteToDo(index);
+  }, [deleteToDo])
+
 
   return (
     <div>
