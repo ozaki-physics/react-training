@@ -12,6 +12,7 @@ services:
       - .:/share_dir
       # コンテナ側の node_modules を ホストと同期しない
       - /share_dir/react-training/node_modules
+      - /share_dir/react-training-ts/node_modules
     ports:
       - "127.0.0.1:3000:3000"
     # docker-compose でマウントしたり, go run で動かしたり, build し直したり と開発用の操作が多いから

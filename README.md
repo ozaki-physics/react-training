@@ -8,3 +8,5 @@
 - [グローバルな State 管理](./docs/chapter_07.md)
 - [React と TypeScript](./docs/chapter_08.md)
 - [カスタムフック](./docs/chapter_09.md)
+
+react-app が2個共存してる(TypeScript なし, あり)  
