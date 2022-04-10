@@ -5,6 +5,6 @@ ENV dir=share_dir
 
 RUN mkdir ${dir}
 WORKDIR /${dir}
-RUN npx create-react-app@5.0.0 ${REPOSITORY}
+RUN npx create-react-app@5.0.0 ${REPOSITORY} --template typescript
 
 # CMD ["npm" "start"]
